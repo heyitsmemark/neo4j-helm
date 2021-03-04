@@ -23,7 +23,6 @@ metadata:
 spec:
 {{- if (or (eq .Values.core.service.type "ClusterIP") (empty .Values.core.service.type)) }}
   type: ClusterIP
-  clusterIP: None
 {{- else if eq .Values.core.service.type "LoadBalancer" }}
   type: LoadBalancer
   {{- with .Values.core.service.loadBalancerSourceRanges }}
